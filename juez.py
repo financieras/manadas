@@ -2,15 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Mar 10 11:00:00 2020
-@author: apa
+@author: financieras
 """
-import random
-
 import random
 
 class Juez:
     def __init__(self):
-        self.tablero = [[0 for i in range(50)] for j in range(50)]
+        self.tablero = [[0]*50 for _ in range(50)]
         self.manada_a = Manada("A")
         self.manada_b = Manada("B")
         self.generar_comida()
