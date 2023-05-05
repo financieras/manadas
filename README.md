@@ -1,1 +1,10 @@
 # Juego de las Manadas
+
+El juego se llama "El juego de las manadas" y se juega en un tablero con varios jugadores, inicialmente con dos jugadores.
+
+Se juega sobre un tablero de 50x50 casillas. Son dos equipos que van moviéndose por el tablero de forma alterna, haciendo una tirada cada uno. Los equipos se llaman Manada A y Manada B. Cada manada está compuesta por una serie de miembros que inicialmente son 10 miembros para cada manada. En el tablero hay comida distribuida de forma aleatoria por las casillas. Hay 20 casillas en las que aparecen una unidad de comida, hay 16 casillas en las que aparecen dos unidades de comida y hay 9 casillas en las que aparecen tres unidades de comida. Las manadas se mueven de una en una casilla en cada tirada. Cuando una manada llega a una casilla de comida, come y se incrementa el número de miembros de la manada en tantos miembros nuevos como unidades de comida hubiera. Gana la manada que más miembros tenga cuando ya no queda más comida en el tablero.
+
+La clave para ganar el juego reside en trazar los caminos óptimos para llegar a las casillas que tienen comida antes de que lo logre la manada rival. También es importante tener en cuenta la posición de la manada rival y tratar de bloquear su camino hacia las casillas con comida. Además, es importante tener en cuenta la cantidad de miembros de cada manada y tratar de aumentar el número de miembros de tu propia manada comiendo la mayor cantidad de comida posible.
+
+Cdigo en Python utilizando programación orientada a objetos. Existen tres programas diferentes que no se conocen entre si. Por un lado está el código del **Juez** del juego que  genera el **tablero** inicial con las posiciones aleatorias de la **comida** y de los jugadores **A** y **B**. El Juez también determina quién ha ganado el juego. El juez se comunica con los jugadores mediante una **API**. Por otro lado, cada uno de los jugadores tiene su propio código que utiliza la API proporcionada por el Juez. El código de cada jugador no se comparte con el jugador enemigo, esto es, cada manada tiene su propio código con su estrategia privada.
+
