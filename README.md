@@ -3,33 +3,28 @@
 El juego de las manadas en Python con programación orientada a objetos.
 
 ## Normas
-1. Se juega en un tablero de 40x40 casillas
-2. Puede haber varios jugadores, mínimo dos jugadores que son A y B, llamados:
-   * Manada A
-   * Manada B
+1. Se juega en un tablero cuadrado, por ejemplo de 10x10 casillas
+2. Puede haber varios jugadores, mínimo dos jugadores y máximo 26 jugadores, que se denominan por las letras mayúsculas del alfabetoson A y B, llamados:
+   * A: manada A
+   * B: manada B
 3. Los jugadores van moviéndose por el tablero alternando sus tiradas, primero la Manada A y luego la Manada B y así sucesivamente
-4. En cada tirada cada manada solo puede moverse a una de estas cuatro casillas contíguas:
+4. En cada tirada cada manada puede moverse en cruz, a una de estas cuatro casillas contíguas, de una en una casillas:
    * arriba
    * abajo
    * derecha
-   * izquierda 
-5. Cada manada está compuesta por una serie de miembros que inicialmente son 10 miembros para cada manada.
-6. En el tablero hay comida distribuida de forma aleatoria por las casillas.
-   * Hay 20 casillas en las que aparecen una unidad de comida
-   * Hay 16 casillas en las que aparecen dos unidades de comida
-   * Hay 9 casillas en las que aparecen tres unidades de comida
-7. Cuando una manada llega a una casilla de comida, come y se incrementa el número de miembros de la manada en tantos miembros nuevos como unidades de comida hubiera.
-8. Una manada no puede ocupar la casilla donde se encuentre otra manada rival, pero si puede intentar chocar con ella.
-9. Si una manada choca con otra decimos que se produce una pelea y que la manada con la que se ha chocado recibe un daño.
-10. El daño se traduce en un número de miembros de la manada que mueren.
-11. El daño se genera con un número aleatorio, por lo que los muertos pueden oscilar entre un mínimo de 1 y un cierto porcentaje de la población existente en esa manada.
-12. Gana la manada que más miembros tenga cuando ya no quede comida en el tablero.
-13. Al final se elabora un ranking con el número de miembros que quedan en cada manada cuando el juego termina.
+   * izquierda
+5. En el tablero hay comida distribuida de forma aleatoria por las casillas.
+   * Se indica el número de casillas en las que hay comida
+   * La cantidad de comida que hay en una casilla varía aleatoriamente entre 1 y 9
+6. Cuando una manada llega a una casilla de comida, come e incorpora el valor de la comida de esa casilla a su puntuación.
+7. Una manada no puede ocupar la casilla donde se encuentre otra manada rival.
+8. Gana la manada que haya acumulado más puntos de comida al finalizar el juego.
+9. El juego termina cuando ya no queda comida sobre el tablero o cuando todos los jugadores estuvieran bloqueados (ahoragos) y no pudieran moverse
+10. Al final se elabora un ranking con los puntos obtenidos por cada manada y se proclama al gandador o a los ganadores en caso de empate.
 
 ## Estrategia
-1. La clave para ganar el juego reside en trazar los caminos óptimos para llegar a las casillas que tienen comida antes de que lo logren las manadas rivales.
+1. La clave para ganar el juego reside en trazar los caminos óptimos para llegar a las casillas que tienen más comida antes de que lo logren las manadas rivales.
 2. También es importante tener en cuenta la posición de las manadas rivales
-3. Es importante tener en cuenta la cantidad de miembros de cada manada y tratar de aumentar el número de miembros de tu propia manada comiendo la mayor cantidad de comida posible.
 
 ## Código
 Codigo en Python utilizando programación orientada a objetos.  
@@ -39,8 +34,8 @@ Codigo en Python utilizando programación orientada a objetos.
    * Crea un tablero vacío
    * Llena el tablero con las casillas que contienen la comida, ditribuidas de forma aleatoria
    * Las casillas de comida aparecen de forma aleatoria en el tablero en celdas vacías
-   * La casilla que contien comida se identifica por un número entre 1 y 3 que indica la cantidad de comida existente
-   * Se establece el número de manadas que jugarán, por defecto dos: manada A y manada B
+   * La casilla que contien comida se identifica por un número entre 1 y 9 que indica la cantidad de comida existente
+   * Se establece el número de manadas que jugarán, como mínimo son dos: manada A y manada B
    * Aparecen las manadas en el tablero distribuidas de forma aleatoria
    * Cada manada se representa por una letra, por ejemplo: A, B, C, D, ...
    * Las manadas no pueden aparecer en casillas que previamente no estuvieran vacías
